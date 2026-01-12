@@ -1,0 +1,168 @@
+/* =========================
+   BOARD
+========================= */
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 90vh;
+}
+
+/* =========================
+   COLUMN
+========================= */
+
+.kanban-column {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* Header */
+.column-header {
+  padding: 12px 16px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-header h3 {
+  font-size: 15px;
+}
+
+/* Header Colors */
+.todo .column-header {
+  background: linear-gradient(135deg, #1e90ff, #007bff);
+}
+
+.in-progress .column-header {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+}
+
+.done .column-header {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.column-header button {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   ADD CARD ROW
+========================= */
+
+.add-card {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+}
+
+.add-card:hover {
+  background: #f1f3f6;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.kanban-card {
+  position: relative;
+  background: #ffffff;
+  margin: 10px 12px;
+  padding: 12px 12px 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card-indicator {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 4px;
+}
+
+.todo .card-indicator {
+  background: #1e90ff;
+}
+
+.in-progress .card-indicator {
+  background: #ffa500;
+}
+
+.done .card-indicator {
+  background: #2ecc71;
+}
+
+.kanban-card p {
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+  cursor: pointer;
+}
+
+.kanban-card input {
+  font-size: 14px;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.drag-handle {
+  cursor: grab;
+  color: #999;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+  opacity: 0.6;
+  font-size: 24px;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+  }
+
+  .kanban-column {
+    width: 100%;
+  }
+}
